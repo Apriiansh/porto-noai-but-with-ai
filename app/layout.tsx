@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { BBH_Bartle, Raleway } from "next/font/google";
+import { Bebas_Neue, Raleway } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar/page";
 
-const bbh_bartle = BBH_Bartle({
-  variable: "--font-bbh-bartle",
+const bebas_neue = Bebas_Neue({
+  variable: "--font-bebas-neue",
   subsets: ["latin"],
   weight: "400"
 });
@@ -29,9 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bbh_bartle.variable} ${raleway.variable} antialiased h-screen flex flex-col pt-16`}
+        className={`${bebas_neue.variable} ${raleway.variable} antialiased h-screen flex flex-col pt-16`}
       >
-        <Navbar />
         {children}
       </body>
     </html>

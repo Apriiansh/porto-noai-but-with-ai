@@ -2,7 +2,7 @@ import PrevButton from "@/components/PrevButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, ArrowUpToLine } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 interface ContactSectionProps {
   onCover?: () => void;
@@ -15,6 +15,8 @@ const myContact = {
   phone: "+62 822-7951-2377",
   linkGithub: "https://github.com/Apriiansh",
   linkLinkedin: "https://www.linkedin.com/in/apriiansh27",
+  linkFacebook: "https://www.facebook.com/aprii.ansh",
+  linkInstagram: "https://www.instagram.com/apriansh_27/",
 }
 
 export default function ContactSection({ onCover, onPrevious }: ContactSectionProps) {
@@ -48,6 +50,16 @@ export default function ContactSection({ onCover, onPrevious }: ContactSectionPr
               <Button variant="outline" size="icon" asChild>
                 <a href={myContact.linkLinkedin} target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href={myContact.linkFacebook} target="_blank" rel="noopener noreferrer">
+                  <FaFacebook className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button variant="outline" size="icon" asChild>
+                <a href={myContact.linkInstagram} target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="w-4 h-4" />
                 </a>
               </Button>
             </div>
