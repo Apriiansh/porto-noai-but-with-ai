@@ -5,15 +5,18 @@ export type Users = {
 };
 
 export type Project = {
+  id?: string;
   title: string;
   description: string;
-  tech: string;
+  tech: string[];
   type: string;
   link: string;
   githubLink?: string;
+  order?: number;
 };
 
 export type Education = {
+  id?: string;
   degree: string;
   institution: string;
   year: string;
@@ -21,6 +24,7 @@ export type Education = {
 };
 
 export type Contact = {
+  yapping?: string;
   email: string;
   phone?: string;
   github?: string;
@@ -37,4 +41,3 @@ export type About = {
   hobbies: string[];
   photo?: string;
 };
-

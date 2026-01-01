@@ -45,21 +45,23 @@ export default function AboutSection({
       <Card className="w-full max-w-4xl mt-5 border-border hover:border-primary transition-all duration-300">
         <div className="flex justify-between items-center border-b border-border hover:border-primary transition-all duration-300">
           <CardHeader className="flex flex-col whitespace-nowrap">
-            <CardTitle className="font-heading text-primary text-2xl">
+            <CardTitle className="font-subheading text-primary text-2xl">
               {about.name}
             </CardTitle>
-            <CardDescription className="text-xl">
+            <CardDescription className="font- text-xl">
               {about.role}
             </CardDescription>
           </CardHeader>
-          <Image
-            src={about.photo || "/profile.JPG"}
-            alt="profile picture"
-            width={140}
-            height={100}
-            aria-label="Apri Photo"
-            className="shadow-accent shadow-md/20 rounded-md m-4"
-          />
+          <div className="w-35 h-25 relative m-4">
+            <Image
+              src={about.photo || "/profile.JPG"}
+              alt="profile picture"
+              fill
+              sizes="140px"
+              className="object-cover shadow-accent shadow-md/20 rounded-md"
+              aria-label="Apri Photo"
+            />
+          </div>
         </div>
 
         <CardContent>
@@ -70,7 +72,7 @@ export default function AboutSection({
             <h3 className="font-semibold mb-2">Skills:</h3>
             <div className="flex flex-wrap gap-2">
               {about.skills.map((skill, index) => (
-                <Badge key={index} variant="secondary">
+                <Badge key={index} variant="secondary" className="font-subheading">
                   {skill}
                 </Badge>
               ))}
@@ -80,7 +82,7 @@ export default function AboutSection({
             <h3 className="font-semibold mb-2">Hobbies:</h3>
             <div className="flex flex-wrap gap-2">
               {about.hobbies.map((hobby, index) => (
-                <Badge key={index} variant="outline">
+                <Badge key={index} variant="outline" className="pb-1 font-subheading">
                   {hobby}
                 </Badge>
               ))}

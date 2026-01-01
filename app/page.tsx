@@ -3,12 +3,12 @@
 import CoverSection from "./(contents)/CoverSection";
 import AboutSection from "./(contents)/AboutSection";
 import EducationSection from "./(contents)/EducationSection";
-import ExperienceSection from "./(contents)/ExperienceSection";
 import ContactSection from "./(contents)/ContactSection";
 import Footer from "./components/Footer/page";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/page";
+import ProjectSection from "./(contents)/ProjectSection";
 
 export default function Home() {
   const router = useRouter();
@@ -41,13 +41,13 @@ export default function Home() {
         <AboutSection onNext={() => handleScrollToSection("education")} onPrevious={() => handleScrollToSection("cover")} />
       </section>
       <section id="education">
-        <EducationSection onNext={() => handleScrollToSection("experience")} onPrevious={() => handleScrollToSection("about")} />
+        <EducationSection onNext={() => handleScrollToSection("projects")} onPrevious={() => handleScrollToSection("about")} />
       </section>
-      <section id="experience">
-        <ExperienceSection onNext={() => handleScrollToSection("contact")} onPrevious={() => handleScrollToSection("education")} />
+      <section id="projects">
+        <ProjectSection onNext={() => handleScrollToSection("contact")} onPrevious={() => handleScrollToSection("education")} />
       </section>
       <section className="flex-1" id="contact">
-        <ContactSection onPrevious={() => handleScrollToSection("experience")} onCover={() => handleScrollToSection("cover")} />
+        <ContactSection onPrevious={() => handleScrollToSection("projects")} onCover={() => handleScrollToSection("cover")} />
       </section>
       <Footer />
     </>

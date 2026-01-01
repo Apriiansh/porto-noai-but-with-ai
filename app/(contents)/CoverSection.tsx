@@ -13,7 +13,7 @@ export default function CoverSection({ onNext }: CoverSectionProps ) {
       <h1 className="font-heading text-4xl mb-4 sm:text-3xl sm:mb-3">
         ApriiAnsh
       </h1>
-      <h3 className="font-sans text-3xl">PORTOFOLIO</h3>
+      <h3 className="font-subheading text-3xl">PORTOFOLIO</h3>
       <Button className="my-4" variant="destructive">
         <Link href="/resume.pdf" download="resume.pdf">
           resume

@@ -29,7 +29,7 @@ export default function Navbar({ progress }: NavbarProps) {
   }, [isDark]);
 
   useEffect(() => {
-    const sections = ["cover", "about", "education", "experience", "contact"];
+    const sections = ["cover", "about", "education", "projects", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,7 +53,7 @@ export default function Navbar({ progress }: NavbarProps) {
     { href: "#cover", label: "Cover" },
     { href: "#about", label: "About" },
     { href: "#education", label: "Education" },
-    { href: "#experience", label: "My Work" },
+    { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ];
 

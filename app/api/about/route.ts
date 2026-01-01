@@ -59,15 +59,18 @@ export async function PUT(request: Request) {
       updateFields.photo = photoPath || body.photo;
     }
 
-    const updatedAbout = await sql`
-      UPDATE about
-      SET ${sql(updateFields)}
-      WHERE id = 1
+    const updatedAbout = await sql.unsafe(`
+      INSERT INTO about (id, name, role, description, skills, hobbies${photoPath || body.photo ? ', photo' : ''})
+      VALUES (1, '${body.name || ''}', '${body.role || ''}', '${body.description || ''}', ARRAY[${body.skills?.map(s => `'${s.replace(/'/g, "''")}'`).join(',') || ''}], ARRAY[${body.hobbies?.map(h => `'${h.replace(/'/g, "''")}'`).join(',') || ''}]${photoPath || body.photo ? `, '${(photoPath || body.photo || '').replace(/'/g, "''")}'` : ''})
+      ON CONFLICT (id) DO UPDATE SET
+        name = EXCLUDED.name,
+        role = EXCLUDED.role,
+        description = EXCLUDED.description,
+        skills = EXCLUDED.skills,
+        hobbies = EXCLUDED.hobbies${photoPath || body.photo ? ', photo = EXCLUDED.photo' : ''}
       RETURNING *
-    `;
-    if (updatedAbout.length === 0) {
-      return NextResponse.json({ error: "About data not found" }, { status: 404 });
-    }
+    `);
+
     return NextResponse.json(updatedAbout[0]);
   } catch (error) {
     console.error(error);

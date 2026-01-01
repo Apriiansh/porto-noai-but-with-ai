@@ -37,11 +37,12 @@ export default function EducationSection({
       <ul className="flex flex-col w-full max-w-5xl mx-2 items-start">
         {educations.map((education, index) => (
           <li key={index} className="mb-4 w-md">
-            <h3 className="border-b-2 w-full font-semibold text-2xl">
-              {education.institution}
+            <h3 className="font-subheading border-b-2 w-full font-semibold text-3xl">
+              {education.degree}
             </h3>
             <p>
-              {education.degree} | <span className="font-medium">{education.year}</span>
+              {education.institution} |{" "}
+              <span className="font-medium">{education.year}</span>
             </p>
             {education.gpa && (
               <p>

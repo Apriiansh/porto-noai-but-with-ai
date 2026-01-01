@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Raleway } from "next/font/google";
+import { Abril_Fatface, Exo_2, Raleway } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
 
-const bebas_neue = Bebas_Neue({
-  variable: "--font-bebas-neue",
+const abril_fatface = Abril_Fatface({
+  variable: "--font-abril-fatface",
   subsets: ["latin"],
   weight: "400"
+});
+
+const exo_2 = Exo_2({
+  variable: "--font-exo-2",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"]
 });
 
 const raleway = Raleway({
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bebas_neue.variable} ${raleway.variable} antialiased h-screen flex flex-col pt-16`}
+        className={`${abril_fatface.variable} ${exo_2.variable} ${raleway.variable} antialiased h-screen flex flex-col pt-16`}
       >
         {children}
       </body>
