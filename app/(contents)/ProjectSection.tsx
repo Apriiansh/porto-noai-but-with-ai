@@ -44,7 +44,7 @@ export default function ProjectSection({
   }
 
   return (
-    <section className="h-screen max-w-7xl mx-auto flex flex-col justify-center items-center p-4">
+    <section className="min-h-screen max-w-7xl mx-auto flex flex-col justify-center items-center p-4">
       {onPrevious && <PrevButton onPrevious={onPrevious} />}
 
       <h1 className="font-heading text-4xl mb-4 sm:text-3xl md:mb-6">

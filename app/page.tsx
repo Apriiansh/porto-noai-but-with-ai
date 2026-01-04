@@ -4,10 +4,10 @@ import CoverSection from "./(contents)/CoverSection";
 import AboutSection from "./(contents)/AboutSection";
 import EducationSection from "./(contents)/EducationSection";
 import ContactSection from "./(contents)/ContactSection";
-import Footer from "./components/Footer/page";
+import Footer from "./components/Footer";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar/page";
+import Navbar from "./components/Navbar";
 import ProjectSection from "./(contents)/ProjectSection";
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <Navbar progress={progress} />
       <section id="cover">
         <CoverSection onNext={() => handleScrollToSection("about")} />
@@ -50,6 +50,6 @@ export default function Home() {
         <ContactSection onPrevious={() => handleScrollToSection("projects")} onCover={() => handleScrollToSection("cover")} />
       </section>
       <Footer />
-    </>
+    </div>
   );
 }

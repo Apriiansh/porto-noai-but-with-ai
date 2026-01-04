@@ -34,10 +34,10 @@ export default function EducationSection({
       <h1 className="font-heading text-4xl sm:text-3xl mb-4 md:mb-6">
         EDUCATION
       </h1>
-      <ul className="flex flex-col w-full max-w-5xl mx-2 items-start">
+      <ul className="flex flex-col mx-auto max-w-5xl items-start">
         {educations.map((education, index) => (
           <li key={index} className="mb-4 w-md">
-            <h3 className="font-subheading border-b-2 w-full font-semibold text-3xl">
+            <h3 className="font-subheading border-b-2 md:w-full border-primary pb-1 font-semibold text-xl md:text-2xl mb-1">
               {education.degree}
             </h3>
             <p>

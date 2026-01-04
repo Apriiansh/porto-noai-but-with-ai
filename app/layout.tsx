@@ -33,9 +33,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${abril_fatface.variable} ${exo_2.variable} ${raleway.variable} antialiased h-screen flex flex-col pt-16`}
+        className={`${abril_fatface.variable} ${exo_2.variable} ${raleway.variable} antialiased min-h-screen flex flex-col pt-16 overflow-x-hidden w-full`}
       >
         {children}
       </body>

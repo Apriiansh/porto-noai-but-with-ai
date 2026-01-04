@@ -35,7 +35,7 @@ export default function ContactSection({ onCover, onPrevious }: ContactSectionPr
       )}
       <h1 className="font-heading text-4xl sm:text-3xl mb-8">CONTACT</h1>
 
-        <Card>
+        <Card className="w-full max-w-2xl min-h-80 p-6 items-start justify-center text-nowrap">
           <CardHeader>
             <CardTitle>Get In Touch</CardTitle>
             <CardDescription>{contact.yapping}</CardDescription>
